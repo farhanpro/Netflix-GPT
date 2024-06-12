@@ -1,6 +1,7 @@
 import Header from "./Header";
 import {useRef, useState} from "react";
 import { checkValidData } from "../utils/validate";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const Login =  ()=>{
@@ -19,7 +20,20 @@ const Login =  ()=>{
     const handleButtonClick = () =>{
         //Validate the form data
       const message =  checkValidData(email.current.value,password.current.value)
-        setErrorMessage(message);
+      setErrorMessage(message);
+      if(message) return;
+      //SignIn SignUp  Logic
+      if(!isSingInForm)
+        {
+            //Signup logic
+        }
+        else
+        {
+            //SignIn logic
+        }   
+
+      
+      
     };
 
     return(
@@ -29,7 +43,7 @@ const Login =  ()=>{
    <img alt="Backgroundimage"  src="https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"></img>
    </div>
 
-   <form onSubmit={(e)=>e.preventDefault()} className="w-3/12 absolute p-12 bg-black opacity-90 mt-64 mx-auto right-0 left-0 text-white rounded-2xl">
+   <form onSubmit={(e)=>e.preventDefault()} className="w-3/12  p-12 bg-black opacity-90 mt-36 mx-auto right-0 left-0 text-white rounded-2xl fixed">
    <h1 className="font-bold text-3xl py-4">{isSingInForm === true ? "Sign In" : "Sing Up"}</h1>
    {!isSingInForm && <input ref={name} type="text" placeholder="Name" className="p-4 my-4 w-full bg-gray-600 rounded-lg"/>}
     <input ref={email} type="text" placeholder="Email or phone number" className="p-4 my-4 bg-gray-600 w-full rounded-lg"/>
