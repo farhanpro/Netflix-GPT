@@ -1,7 +1,8 @@
 import Header from "./Header";
 import {useRef, useState} from "react";
-import { checkValidData } from "../utils/validate";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {checkValidData} from "../utils/validate";
+import {createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {auth} from "../utils/firebase";
 
 
 const Login =  ()=>{
@@ -12,6 +13,7 @@ const Login =  ()=>{
     const email = useRef(null);
     const password = useRef(null);
     const name = useRef(null);
+    const auth = getAuth();
 
     const toggleSingUp = () =>{
         setIsSingInForm(!isSingInForm);
@@ -26,6 +28,26 @@ const Login =  ()=>{
       if(!isSingInForm)
         {
             //Signup logic
+            
+
+            createUserWithEmailAndPassword(
+                auth,
+                email.current.value,
+                password.current.value
+            )
+            .then((userCredential) => {
+                // Signed up 
+                const user = userCredential.user;
+                console.log("This is the User := ",user)
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode,errorMessage);
+                setErrorMessage(errorCode+" "+errorMessage);
+                // ..
+            });
         }
         else
         {
