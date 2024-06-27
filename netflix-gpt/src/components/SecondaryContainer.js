@@ -3,7 +3,7 @@ import MovieList  from "./MovieList"
 const SecondaryContainer =  () => {
   const  movies =  useSelector( (store) =>  store.movies);
   if(movies.nowPlayingMovies === null || movies.trailerVideo === null ) return;
-  console.log("Movies are fetched here ",movies);
+  // console.log("Movies are fetched here ",movies);
   return (
     <div className=" bg-black ">
     <div className="-mt-auto pl-7 relative z-20 ">

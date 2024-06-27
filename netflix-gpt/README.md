@@ -12,3 +12,7 @@
     -NetflixGPT
         -Search Bar
         -Movie Suggestion
+        -Gpt search page 
+        -Gpt search bar
+        -Added a Multilanguage featuer in our app
+        -Integrated the GPT API's (with open AI keys)

@@ -6,7 +6,7 @@ import {auth} from "../utils/firebase";
 //import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { NETFLIX_BG, NETFLIX_SRC_SET, USER_AVATAR } from "../utils/constants";
 
 
 const Login =  ()=>{
@@ -61,7 +61,7 @@ const Login =  ()=>{
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode,errorMessage);
+              //  console.log(errorCode,errorMessage);
                 setErrorMessage(errorCode+" "+errorMessage);
                 // ..
             });
@@ -93,7 +93,7 @@ signInWithEmailAndPassword(auth, email.current.value,password.current.value)
     <div>
     <Header/>
    <div className="absolute">
-   <img alt="Backgroundimage"  src="https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"></img>
+   <img alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
    </div>
 
    <form onSubmit={(e)=>e.preventDefault()} className="w-3/12  p-12 bg-black opacity-90 mt-36 mx-auto right-0 left-0 text-white rounded-2xl fixed">
