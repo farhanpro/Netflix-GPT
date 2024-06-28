@@ -16,3 +16,10 @@
         -Gpt search bar
         -Added a Multilanguage featuer in our app
         -Integrated the GPT API's (with open AI keys)
+        - fetched gpt movie suggestions from tmdb
+        -created theb gpt slice 
+        -reused movie list component  to make movie suggestion container
+        -memoization 
+        -multilingual support
+        -adding .env file to gitignore
+        -fixed css responsive to mobile

@@ -13,7 +13,7 @@ const Header = () =>{
     const user = useSelector(store => store.user);
     const dispatch = useDispatch();
     const isGptOn = useSelector(store => store.gpt);
-    console.log(isGptOn,"is gpt on");
+    
 
     const handleSignOut = () =>
     {
@@ -55,8 +55,8 @@ const Header = () =>{
   }
 
     return (
-        <div className="px-8 w-screen py-2 bg-gradient-to-b from-black z-10 fixed flex justify-between"> 
-       <img className="w-44 " src={LOGO} alt="logo"/>
+        <div className="px-8 w-screen py-2 bg-gradient-to-b from-black z-10 fixed flex flex-col  md:flex-row md:justify-between "> 
+       <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo"/>
        {user !== null ? <div className="flex justify-evenly p-2">
 
         {isGptOn.showGptSearch && <select className="m-2 px-4 bg-gray-800 text-white border-none rounded-full" onChange={handleLanguageChange}>
@@ -65,9 +65,9 @@ const Header = () =>{
        
 
         <button onClick={handleGptSearchClick} className={`${isGptOn.showGptSearch===true?'bg-red-700 hover:bg-red-500':'bg-gray-700 hover:bg-gray-500'}  border-none rounded-full text-white m-2 px-4`}>{isGptOn.showGptSearch  ?"Homepage":"GPT Search"}</button>
-        <img className="w-12 h-12 mt-2 " alt="usericon" src={user.photoURL}/>
+        <img className="w-12 h-12 mt-2 hidden md:block" alt="usericon" src={user.photoURL}/>
         {/* <img className="w-12 h-12 mt-2 " alt="usericon" src="https://occ-0-3081-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png"/> */}
-        <button onClick={handleSignOut} className="bg-red-700 hover:bg-red-500 border-none rounded-full text-white m-2 p-2">Sign Out</button>
+        <button onClick={handleSignOut} className="bg-red-700 hover:bg-red-500 border-none rounded-full text-white mx-5 px-3 md:m-2 p-2">Sign Out</button>
        </div> :<div></div>}
        
        </div>)

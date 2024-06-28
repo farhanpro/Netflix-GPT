@@ -6,7 +6,7 @@ const SecondaryContainer =  () => {
   // console.log("Movies are fetched here ",movies);
   return (
     <div className=" bg-black ">
-    <div className="-mt-auto pl-7 relative z-20 ">
+    <div className="mt-0 md:-mt-auto md:pl-7 relative z-20 ">
       <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies}/>
       <MovieList title={"Trending"} movies={movies.trendingMovies}/>
       <MovieList title={"Popular"} movies={movies.popularMovies}/>

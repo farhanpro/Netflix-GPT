@@ -93,10 +93,10 @@ signInWithEmailAndPassword(auth, email.current.value,password.current.value)
     <div>
     <Header/>
    <div className="absolute">
-   <img alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
+   <img className="h-screen object-cover md:h-auto" alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
    </div>
 
-   <form onSubmit={(e)=>e.preventDefault()} className="w-3/12  p-12 bg-black opacity-90 mt-36 mx-auto right-0 left-0 text-white rounded-2xl fixed">
+   <form onSubmit={(e)=>e.preventDefault()} className="md:w-3/12  p-12 bg-black opacity-90 mt-36 mx-auto right-0 left-0 text-white rounded-2xl fixed">
    <h1 className="font-bold text-3xl py-4">{isSingInForm === true ? "Sign In" : "Sing Up"}</h1>
    {!isSingInForm && <input ref={name} type="text" placeholder="Name" className="p-4 my-4 w-full bg-gray-600 rounded-lg"/>}
     <input ref={email} type="text" placeholder="Email or phone number" className="p-4 my-4 bg-gray-600 w-full rounded-lg"/>

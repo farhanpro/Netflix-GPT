@@ -5,14 +5,12 @@ import { NETFLIX_BG, NETFLIX_SRC_SET } from '../utils/constants'
 
 const GptSearch = () => {
   return (
-    <div>
-    <div className="absolute -z-10">
-   <img alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
-   </div>
-   <GptSearchBar/>
-   <GptMovieSuggestion/>
-
+    <>
+    <div className="fixed -z-10"> 
+    <img className="h-screen object-cover md:h-auto" alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
     </div>
+    <div className=""> <GptSearchBar/><GptMovieSuggestion/></div>
+    </>
   )
 }
 
