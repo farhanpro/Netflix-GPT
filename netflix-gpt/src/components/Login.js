@@ -84,16 +84,13 @@ signInWithEmailAndPassword(auth, email.current.value,password.current.value)
     setErrorMessage(errorCode+ + errorMessage);
   });
         }   
-
-      
-      
-    };
+      };
 
     return(
     <div>
     <Header/>
    <div className="absolute">
-   <img className="h-screen object-cover md:h-auto" alt="Backgroundimage"  src={NETFLIX_BG} srcset={NETFLIX_SRC_SET}></img>
+   <img className="h-screen object-cover md:h-auto" alt="Backgroundimage"  src={NETFLIX_BG} srcSet={NETFLIX_SRC_SET}></img>
    </div>
 
    <form onSubmit={(e)=>e.preventDefault()} className="md:w-3/12  p-12 bg-black opacity-90 mt-36 mx-auto right-0 left-0 text-white rounded-2xl fixed">
